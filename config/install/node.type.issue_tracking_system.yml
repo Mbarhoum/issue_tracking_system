@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - issue_tracking_system
+id: issue_tracking_system
+label: 'Issue Tracking System'
+name: 'Issue Tracking System'
+type: issue_tracking_system
+description: 'Provide a way to track an Issue in the Drupal System'
+new_revision: false
+preview_mode: 0

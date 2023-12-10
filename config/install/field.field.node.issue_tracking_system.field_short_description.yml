@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_short_description
+id: node.issue_tracking_system.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: issue_tracking_system
+label: 'Short Description'
+weight: 2
+description: 'A field for storing long text.'
+required: false
+translatable: true
+field_type: text_long  # or the appropriate field type
+settings:
+  max_length: null
+module: text
+locked: false
+cardinality: 1

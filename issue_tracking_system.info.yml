@@ -1,0 +1,11 @@
+name: Issue Tracking System
+type: module
+description: Provide a way to tracking a Issue at Drupal System.
+core_version_requirement: ^9.2 || ^10
+package: Custom
+
+configure: node.type.issue_tracking_system
+
+version: '1.0.0-beta1'
+project: 'issue_tracking_system'
+datestamp: 1702049815

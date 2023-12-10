@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_priority
+id: node.issue_tracking_system.field_priority
+field_name: field_priority
+entity_type: node
+bundle: issue_tracking_system
+label: 'priority'
+description: 'Types of priority.'
+required: false
+field_type: entity_reference
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      priority: priority
+    sort:
+      field: _none
+    auto_create: false
+module: entity_reference
+locked: false
+cardinality: 1

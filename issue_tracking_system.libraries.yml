@@ -1,0 +1,8 @@
+tracking_system:
+  css:
+    component:
+      css/tools.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

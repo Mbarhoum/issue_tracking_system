@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_reporter
+id: node.issue_tracking_system.field_reporter
+field_name: field_reporter
+entity_type: node
+bundle: issue_tracking_system
+label: 'Reporter'
+weight: 3
+description: 'who make a reporter.'
+required: false
+field_type: entity_reference 
+settings:
+  target_type: user
+module: entity_reference
+locked: false
+cardinality: 1

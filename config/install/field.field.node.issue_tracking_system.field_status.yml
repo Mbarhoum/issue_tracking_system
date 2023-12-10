@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_status
+id: node.issue_tracking_system.field_status
+field_name: field_status
+entity_type: node
+bundle: issue_tracking_system
+label: 'Status'
+description: 'Status Of ticket.'
+required: false
+field_type: entity_reference
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      status: status
+    sort:
+      field: _none
+    auto_create: false
+module: entity_reference
+locked: false
+cardinality: 1

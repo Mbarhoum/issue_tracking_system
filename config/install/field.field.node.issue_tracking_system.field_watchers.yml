@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_watchers
+id: node.issue_tracking_system.field_watchers
+field_name: field_watchers
+entity_type: node
+bundle: issue_tracking_system
+label: 'watchers'
+description: 'Who are people that watch Ticket.'
+required: false
+field_type: entity_reference 
+settings:
+  target_type: user
+module: entity_reference
+locked: false
+cardinality: -1

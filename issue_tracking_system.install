@@ -1,0 +1,105 @@
+<?php
+
+use \Drupal\taxonomy\Entity\Vocabulary;
+use \Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+
+// hook_install()
+function issue_tracking_system_install() {
+
+	// issue Type vocabulary
+	$issueType = Vocabulary::create([
+		'name' => 'Issue Type',
+		'description' => 'Issue Type Category',
+		'vid' => 'issue_type',
+	])->save();
+	
+	if($issueType) {
+		$terms = [
+			'New feature',
+			'Change',
+			'Task',
+			'Bug',
+			'Improvement',
+		];
+
+		foreach($terms as $termName) {
+			$term = Term::create([
+				'name' => $termName,
+				'vid' => 'issue_type',
+			]);
+			$term->save();
+		}
+	}
+
+  //Priority vocabulary
+	$priority = Vocabulary::create([
+		'name' => 'Priority',
+		'description' => 'Priority Category for the issue Content Type',
+		'vid' => 'priority',
+	])->save();
+
+	if($priority) {
+		$terms = [
+			'Critical',
+			'High',
+			'Low',
+			'Trivial',
+		];
+
+		foreach($terms as $termName) {
+			$term = Term::create([
+				'name' => $termName,
+				'vid' => 'priority',
+			]);
+			$term->save();
+		}
+	}
+
+	//Status vocabulary
+	$status = Vocabulary::create([
+		'name' => 'Status',
+		'description' => 'Status Category for the issue Content Type',
+		'vid' => 'status',
+	])->save();
+
+
+	if($status) {
+		$terms = [
+			'To Do',
+			'In Progress',
+			'In Review',
+			'Done',
+		];
+
+		foreach($terms as $termName) {
+			$term = Term::create([
+				'name' => $termName,
+				'vid' => 'status',
+			]);
+			$term->save();
+		}
+	}
+
+	// List of configuration files for fields and content type
+	$configFiles = [
+		"node.type.issue_tracking_system",
+		"field.field.node.issue_tracking_system.field_short_description",
+		'field.field.node.issue_tracking_system.field_reporter',
+		'field.field.node.issue_tracking_system.field_watchers',
+		'field.field.node.issue_tracking_system.field_type_issue',
+		'field.field.node.issue_tracking_system.field_assignee',
+		'field.field.node.issue_tracking_system.field_priority',
+		'field.field.node.issue_tracking_system.field_status',
+		'field.field.node.issue_tracking_system.field_due_date',
+		'node.type.issue_tracking_system.default',
+	];
+
+   // import 
+	foreach($configFiles as $configName){
+		\Drupal::service('config.installer')->installDefaultConfig($configName);
+		\Drupal::service('router.builder')->rebuild();
+		drupal_flush_all_caches();
+	}
+}

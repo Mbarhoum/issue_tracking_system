@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_type_issue
+id: node.issue_tracking_system.field_type_issue
+field_name: field_type_issue
+entity_type: node
+bundle: issue_tracking_system
+label: 'Type Issue'
+description: 'Types of Issues.'
+required: false
+field_type: entity_reference
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      issue_type: issue_type
+    sort:
+      field: _none
+    auto_create: false
+module: entity_reference
+locked: false
+cardinality: 1

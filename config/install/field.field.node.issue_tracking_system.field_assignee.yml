@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issue_tracking_system
+    - field.storage.node.field_assignee
+id: node.issue_tracking_system.field_assignee
+field_name: field_assignee
+entity_type: node
+bundle: issue_tracking_system
+label: 'Assignee'
+description: 'Field Assignee To user to make fixing.'
+required: false
+field_type: entity_reference 
+settings:
+  target_type: user
+module: entity_reference
+locked: false
+hidden: false
+cardinality: 1
+display:
+  default:
+    label: 'above'
+    type: 'entity_reference'
+    settings: {  }
+    module: entity_reference
+    weight: 3
+    region: content
+    provider: ''
+    resolved: true
+third_party_settings: {  }
+
+

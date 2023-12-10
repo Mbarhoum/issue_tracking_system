@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: node.field_reporter
+field_name: field_reporter
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: entity_reference
+persist_with_no_fields: false
+cardinality: 1
+default_value: {  }
+

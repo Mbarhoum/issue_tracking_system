@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+id: node.field_short_description
+field_name: field_short_description
+entity_type: node
+type: text_long  # or the appropriate field type
+settings:
+  max_length: null
+module: text
+locked: false
+persist_with_no_fields: false
+cardinality: 1
+default_value: {  }
+

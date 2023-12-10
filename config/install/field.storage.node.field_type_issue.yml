@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: node.field_type_issue
+field_name: field_type_issue
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: entity_reference
+cardinality: 1
+persist_with_no_fields: false
+default_value: {  }
+
